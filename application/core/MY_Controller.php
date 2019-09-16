@@ -4,8 +4,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class MY_Controller extends CI_Controller {
 
+	protected $user;
+	protected $data;
+	
 	public function __construct() {
 		parent::__construct();
+		$this->user = $this->ion_auth->user()->row();
+		$this->data['user']=$this->user;
 	}
 	
 	public function is_logged() {

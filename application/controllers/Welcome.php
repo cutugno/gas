@@ -4,9 +4,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Welcome extends MY_Controller {
 
 	public function index() {
-		$this->session->set_userdata('test',1);
-		
-		$this->load->view('welcome_message');
+		$this->load->view('common/open',$this->data);
+		$this->load->view('common/navigation');
+		$this->load->view('common/scripts');
+		$this->load->view('common/close');
 	}
 	
 	public function ciao() {
